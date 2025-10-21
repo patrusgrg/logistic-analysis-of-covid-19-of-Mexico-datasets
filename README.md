@@ -33,25 +33,35 @@ where:
 
 ### Model Evaluation
 
-The model's performance is evaluated using metrics such as:
+The model's performance is evaluated using the following metrics:
 
-1. **Accuracy**:
-   $$ \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}} $$
+| Metric | Formula |
+|--------|---------|
+| Accuracy | `(TP + TN) / (TP + TN + FP + FN)` |
+| Precision | `TP / (TP + FP)` |
+| Recall | `TP / (TP + FN)` |
+| F1 Score | `2 * (Precision * Recall) / (Precision + Recall)` |
 
-2. **Precision**:
-   $$ \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} $$
+Where:
+- `TP`: True Positives (correctly predicted positive cases)
+- `TN`: True Negatives (correctly predicted negative cases)
+- `FP`: False Positives (incorrectly predicted positive cases)
+- `FN`: False Negatives (incorrectly predicted negative cases)
 
-3. **Recall**:
-   $$ \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} $$
+#### Visual Representation:
 
-4. **F1 Score**:
-   $$ \text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} $$
+```
+Accuracy = (True Positives + True Negatives) / Total Cases
+         = (TP + TN) / (TP + TN + FP + FN)
 
-where:
-- TP: True Positives
-- TN: True Negatives
-- FP: False Positives
-- FN: False Negatives
+Precision = True Positives / Predicted Positives
+         = TP / (TP + FP)
+
+Recall = True Positives / Actual Positives
+       = TP / (TP + FN)
+
+F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+```
 
 ## Implementation
 
